@@ -1,4 +1,4 @@
-## Para rodar o JSON server:
+## Para rodar o JSON server
 npm install -g json-server --save
 npx json-server --watch db.json --port 3000
 

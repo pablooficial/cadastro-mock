@@ -1,0 +1,100 @@
+.page{
+  width: 100%;
+  height: 100vh;
+  &--center{
+    width: 60%;
+    margin: 0 auto;
+  }
+  &--title{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DDDDDD;
+    &__left{
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+
+.btn{
+  padding: 7px 10px;
+  border: 0px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  cursor: pointer;
+  &--new{
+    background-color: #4486EA;
+  }
+  &--edit{
+    background-color: #E18F53;
+  }
+  &--save{
+    background-color: #3AB72F;
+  }
+  &--delete{
+    background-color: #f83b3b;
+  }
+}
+
+.text{
+  &--red{
+    color: red;
+  }
+}
+
+.form-control{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 280px;
+  margin-bottom: 11px;
+  input, select, textarea{
+    border: 1px solid #D1D1D1;
+    padding: 10px;
+  }
+}
+
+.input{
+  &--validation{
+    height: 14px;
+    width: 100%;
+    margin-top: 5px;
+    span{
+      font-size: 13px;
+      color: red;
+    }
+  }
+}
+
+@media (max-width: 1040px){
+  .page{
+    &--center{
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 750px){
+  .page{
+    &--center{
+      width: 95%;
+    }
+  }
+}
+
+@media (max-width: 450px){
+  .page{
+    &--title{
+      &__left{
+        width: 100%;
+      }
+      button{
+        display: none;
+      }
+    }
+  }
+}

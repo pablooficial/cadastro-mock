@@ -1,0 +1,58 @@
+<div class="list">
+  <app-title title="Listagem de Clientes">
+    <button class="btn btn--new" routerLink="/clientes/cadastrar">
+      <img src="assets/icons/plus.icon.svg" alt="+">
+      NOVO
+    </button>
+  </app-title>
+  <div class="list--button">
+    <button class=" btn btn--new" routerLink="/clientes/cadastrar">
+      <img src="assets/icons/plus.icon.svg" alt="+">
+      NOVO
+    </button>
+  </div>
+  <div class="list--content">
+    <ng-container *ngFor="let client of clientList">
+      <div class="list--content__item">
+        <div class="list--content__item__left">
+          <h4>{{client.name}}</h4>
+          <span>{{client.cnpj}}</span>
+        </div>
+        <div class="list--content__item__right">
+          <div>
+            <div class="status status--{{client.status == 'Inativo' ? 'inactive' : 'active'}}"></div>
+            {{client.status}}
+          </div>
+          <div>
+            <button class="btn btn--delete" (click)="confirmDelete(client)">
+              EXCLUIR
+            </button>
+            <button class="btn btn--edit" (click)="editUser(client)">
+              EDITAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div style="text-align: center;" *ngIf="!clientList.length">
+      Não há registro de clientes.
+    </div>
+  </div>
+  <div class="list--footer" *ngIf="clientList.length">
+    Exibindo {{clientList.length}} de {{clientList.length}} clientes
+  </div>
+</div>
+
+
+
+<div class="modal" *ngIf="showDeleteModal">
+  <div class="modal--body">
+    <div class="modal--body__header">
+      Deseja realmente excluir esse cliente?
+    </div>
+    <div class="modal--body__buttons">
+      <button class="btn btn--delete" (click)="showDeleteModal = !showDeleteModal">Cancelar</button>
+      <button class="btn btn--save" (click)="deleteUser()">Confirmar</button>
+    </div>
+  </div>
+</div>

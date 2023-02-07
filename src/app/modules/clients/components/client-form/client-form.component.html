@@ -1,0 +1,50 @@
+<form [formGroup]="form">
+  <div class="form-control">
+    <label for="name">Nome <span class="text--red">*</span></label>
+    <input type="text" id="name" formControlName="name" maxlength="50" />
+    <div class="input--validation">
+      <span
+        *ngIf="form.get('name')?.invalid && form.get('name')?.value && sentForm"
+        >Digite no mínimo 3 letras no nome*</span
+      >
+      <span
+        *ngIf="
+          form.get('name')?.invalid && !form.get('name')?.value && sentForm
+        "
+        >Nome obrigatório*</span
+      >
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="cnpj">CNPJ <span class="text--red">*</span></label>
+    <input
+      type="text"
+      id="cnpj"
+      formControlName="cnpj"
+      mask="00.000.000/0000-00"
+    />
+    <div class="input--validation">
+      <span
+        *ngIf="form.get('cnpj')?.invalid && form.get('cnpj')?.value && sentForm"
+        >CNPJ inválido*</span
+      >
+      <span *ngIf="!form.get('cnpj')?.value && sentForm"
+        >CNPJ obrigatório*</span
+      >
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="status">Status <span class="text--red">*</span></label>
+    <select id="status" formControlName="status">
+      <option value="Ativo">Ativo</option>
+      <option value="Inativo">Inativo</option>
+    </select>
+  </div>
+
+  <div class="menu--btn">
+    <button class="btn btn--save" (click)="submitForm()">Salvar</button>
+    <button class="btn btn--edit" routerLink="/clientes/lista">Voltar</button>
+  </div>
+</form>

@@ -1,0 +1,28 @@
+{
+  "clients": [
+    {
+      "name": "Auto-Peças Joaquim LTDA.22",
+      "cnpj": "000000000000000",
+      "status": "Inativo",
+      "id": 1
+    },
+    {
+      "name": "Auto-Peças Carlinhos LTDA.",
+      "cnpj": "000000000000000",
+      "status": "Ativo",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Auto-Peças João LTDA.",
+      "cnpj": "000000000000000",
+      "status": "Ativo"
+    },
+    {
+      "id": 4,
+      "name": "Auto-Peças Maria LTDA.",
+      "cnpj": "000000000000000",
+      "status": "Ativo"
+    }
+  ]
+}
